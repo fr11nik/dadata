@@ -87,6 +87,12 @@ const (
 	GenderUnknown Gender = "UNKNOWN" // Не удалось однозначно определить
 )
 
+const (
+	FounderShareTypePercent  FounderShareType = "PERCENT"
+	FounderShareTypeDecimal  FounderShareType = "DECIMAL"
+	FounderShareTypeFraction FounderShareType = "FRACTION"
+)
+
 type (
 	// BoundValue type wrapper for suggest bounds
 	// full documentation https://confluence.hflabs.ru/pages/viewpage.action?pageId=222888017
@@ -397,14 +403,23 @@ type (
 	// PartyFounderType - тип учредителя
 	PartyFounderType string
 
+	// FounderShareType - тип доли учредителя
+	FounderShareType string
+
 	// PartyFounder - учредитель компании.
 	PartyFounder struct {
-		Ogrn string           `json:"ogrn"` // ОГРН учредителя (для юрлиц)
-		Inn  string           `json:"inn"`  // ИНН учредителя
-		Name string           `json:"name"` // Наименование учредителя (для юрлиц)
-		Hid  string           `json:"hid"`  // Внутренний идентификатор
-		Type PartyFounderType `json:"type"` // Тип учредителя (LEGAL / PHYSICAL)
-		Fio  *FIO             `json:"fio"`  // ФИО учредителя (для физлиц)
+		Ogrn  string           `json:"ogrn"` // ОГРН учредителя (для юрлиц)
+		Inn   string           `json:"inn"`  // ИНН учредителя
+		Name  string           `json:"name"` // Наименование учредителя (для юрлиц)
+		Hid   string           `json:"hid"`  // Внутренний идентификатор
+		Type  PartyFounderType `json:"type"` // Тип учредителя (LEGAL / PHYSICAL)
+		Fio   *FIO             `json:"fio"`  // ФИО учредителя (для физлиц)
+		Share *struct {
+			Type        FounderShareType `json:"type"`
+			Value       float64          `json:"value"`
+			Numerator   int64            `json:"numerator"`
+			Denominator int64            `json:"denominator"`
+		} `json:"share"`
 	}
 
 	PartyAuthority struct {

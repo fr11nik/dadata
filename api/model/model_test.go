@@ -39,6 +39,7 @@ func TestParty(t *testing.T) {
 	assert.Equal(t, 2, len(model.Founders))
 	assert.Equal(t, PartyFounderTypeLegal, model.Founders[0].Type)
 	assert.Equal(t, PartySMBCategorySmall, model.Documents.Smb.Category)
+	assert.Equal(t, FounderShareTypePercent, model.Founders[0].Share.Type)
 }
 
 func TestPhone1(t *testing.T) {
