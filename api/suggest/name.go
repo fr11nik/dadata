@@ -3,7 +3,7 @@ package suggest
 import (
 	"context"
 
-	"github.com/ekomobile/dadata/v2/api/model"
+	"github.com/fr11nik/dadata/api/model"
 )
 
 // Name gender values
@@ -71,7 +71,7 @@ func (p *NameParams) applyOption(opts ...NameOption) {
 
 // Name try to return suggest names by params
 func (a *Api) Name(ctx context.Context, requestParams *RequestParams, opts ...NameOption) (ret []*NameSuggestion, err error) {
-	var result = &NameResponse{}
+	result := &NameResponse{}
 
 	params := NameParams{
 		Query: requestParams.Query,

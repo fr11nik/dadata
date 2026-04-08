@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/ekomobile/dadata/v2/client/transport"
+	"github.com/fr11nik/dadata/client/transport"
 	"github.com/stretchr/testify/assert"
 )
 

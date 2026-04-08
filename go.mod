@@ -1,4 +1,4 @@
-module github.com/ekomobile/dadata/v2
+module github.com/fr11nik/dadata
 
 go 1.17
 

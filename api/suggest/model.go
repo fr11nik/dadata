@@ -1,8 +1,6 @@
 package suggest
 
-import (
-	"github.com/ekomobile/dadata/v2/api/model"
-)
+import "github.com/fr11nik/dadata/api/model"
 
 type (
 	// RequestParamsLocation constraints for suggestion

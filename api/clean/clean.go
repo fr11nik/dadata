@@ -3,7 +3,7 @@ package clean
 import (
 	"context"
 
-	"github.com/ekomobile/dadata/v2/api/model"
+	"github.com/fr11nik/dadata/api/model"
 )
 
 type (

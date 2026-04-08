@@ -8,9 +8,9 @@ import (
 	"io"
 	"net/url"
 
-	"github.com/ekomobile/dadata/v2/api/suggest"
-	"github.com/ekomobile/dadata/v2/client/transport"
-	"github.com/ekomobile/dadata/v2/client/transport/encoder"
+	"github.com/fr11nik/dadata/api/suggest"
+	"github.com/fr11nik/dadata/client/transport"
+	"github.com/fr11nik/dadata/client/transport/encoder"
 )
 
 func ExampleNewClient() {
